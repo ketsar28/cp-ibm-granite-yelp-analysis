@@ -1,40 +1,118 @@
-# 🌟 Uncovering Customer Voice: Sentiment & Topic Analysis of Yelp Reviews with IBM Granite 🌟
+# 🧠 Mengungkap Suara Pelanggan dengan IBM Granite  
+## 🎯 Analisis Sentimen & Topik pada Yelp Reviews dengan LLM
 
-## ✨ Project Overview
-Welcome to my Capstone Project repository! This project focuses on leveraging the power of Artificial Intelligence (AI), specifically the Large Language Model (LLM) **IBM Granite**, to transform unstructured customer review data into clear, *actionable* business insights.
+![banner](https://img.shields.io/badge/Powered%20By-IBM%20Granite-blue) ![Status](https://img.shields.io/badge/Status-Selesai-brightgreen)  
 
-In a digital age flooded with *feedback* from platforms like Yelp, businesses face significant challenges in manually analyzing massive volumes of reviews. This project presents an innovative solution to automatically:
-- **Classify Sentiment:** Identify whether a review is positive, neutral, or negative.
-- **Identify Key Topics:** Categorize reviews based on specific themes such as 'Food Quality', 'Service', 'Price', etc.
-- **Summarize Reviews:** Provide concise summaries of longer reviews, capturing the core information without losing key details.
-
-By automating this process, we aim to help businesses make faster, more informed strategic decisions based on the authentic voice of their customers.
-
-## 💾 Raw Dataset
-The dataset utilized in this project is a collection of public reviews from Yelp.com.
-
-**Dataset Link:** [Insert your dataset link here. Example: Kaggle Yelp Reviews Dataset Link or Google Drive Shared Link]
-*(Please ensure this link is public and accessible!)*
-
-This dataset typically includes columns such as the review text (`text`) and star ratings (`stars`), which serve as the primary input for our AI model.
-
-## 💡 Insight & Findings
-Through in-depth analysis using IBM Granite on [state the number of reviews you processed, e.g., the initial 50 reviews] from the Yelp dataset, we uncovered crucial key insights for businesses:
-
-1.  **Dominance of Positive Sentiment:** The majority of reviews (78%) displayed a Positive sentiment, affirming a generally good reception of the product/service by customers.
-2.  **Critical Pain Point: Food Quality:** Among the 18% negative reviews, `Food Quality` emerged as the most dominant theme. This indicates a critical area requiring immediate attention and improvement to prevent potential customer churn.
-3.  **Hidden Opportunities in 'Unknown' Reviews:** Reviews classified as 'Unknown' by our model surprisingly showed very high star ratings (median 4.5 stars, min 4, max 5). This suggests that these customers were highly satisfied but used nuanced or indirect language that made it challenging for the AI to classify them explicitly. Delving deeper into these reviews can uncover unexpected 'wow' factors that could be replicated.
-4.  **Strong Sentiment-Rating Correlation:** There is a strong correlation between AI-predicted sentiment and original star ratings. Positive sentiment generally aligns with high ratings, while Negative sentiment aligns with low ratings, validating our model's accuracy.
-5.  **Topic Prioritization:** Topics such as `Food Quality`, `Service`, and `Price` were the most frequently discussed, guiding businesses to the areas most impactful on customer experience.
-
-## 🤖 AI Support Explanation
-This project is entirely powered by **IBM Granite**, a Large Language Model (LLM) accessed via the Replicate platform. The role of AI in this project is crucial:
-
--   **Automated Sentiment Classification:** IBM Granite classifies each review into 'Positive', 'Neutral', or 'Negative' categories. This enables rapid analysis of hundreds to thousands of reviews, a process that would be highly inefficient if done manually.
--   **Key Topic Identification:** Through careful *prompt engineering*, the LLM effectively identifies recurring themes within reviews based on our predefined categories (e.g., 'Food Quality', 'Service'). This precisely helps businesses target specific areas for improvement or promotion.
--   **Key Detail Summarization:** IBM Granite also generates concise summaries (1-2 sentences) for each review. This feature is invaluable for management to quickly grasp the essence of *feedback* without having to read the full text, thereby accelerating review processes and decision-making.
--   **Scalability & Efficiency:** The utilization of an LLM allows this project to be scaled up to process significantly larger volumes of data in the future, providing consistent and accurate insights automatically.
-
-AI not only serves as an automation tool but as a **strategic partner** empowering businesses to listen to and understand the voice of their customers more intelligently and proactively.
+> Proyek ini dilakukan sebagai bagian dari **Capstone Hacktiv8 x IBM SkillsBuild** dengan fokus pada _Data Classification & Summarization using LLM (IBM Granite)_
 
 ---
+
+## 🔍 Project Overview
+
+### 🎯 Tujuan
+Memanfaatkan kecerdasan buatan, khususnya **Large Language Model (LLM)** IBM Granite, untuk mengekstraksi *insight* strategis dari data review pelanggan di platform Yelp yang sangat tidak terstruktur.
+
+### 💼 Latar Belakang
+Setiap hari, bisnis menerima ribuan ulasan dari pelanggan melalui platform seperti Yelp. Namun, tantangan utama:
+- Data berupa teks bebas (unstructured)
+- Tidak efisien jika dibaca manual
+- Banyak insight penting tersembunyi di dalamnya
+
+> Solusi: Menggunakan AI (LLM) untuk membaca, memahami, dan menganalisis pola sentimen & topik utama dari review pelanggan.
+
+---
+
+## 📁 Raw Dataset
+
+- **Sumber**: Kaggle (Yelp Reviews Public Dataset)  
+- **Kolom utama**: `text` (ulasan pelanggan), `stars` (rating asli)
+- **Link dataset**: [Download Yelp.csv di sini](https://www.kaggle.com/datasets/yelp-dataset/yelp-dataset)  
+- 📦 File dataset juga tersedia di repo ini: `yelp.csv`
+
+---
+
+## 🧪 Analysis Process
+
+### 🛠️ Tools & Teknologi
+- Python, Pandas, Matplotlib, Seaborn
+- LangChain + [Replicate](https://replicate.com/) (untuk integrasi model LLM IBM Granite)
+- Google Colab & Google Drive
+
+### 🔗 Model AI
+- Model: `ibm-granite/granite-3.3-8b-instruct`
+- Diakses melalui platform **Replicate API**
+
+### 🔄 Alur Analisis:
+1. **Pra-pemrosesan**: Bersihkan data ulasan yang kosong
+2. **Klasifikasi Sentimen**: Gunakan prompt → Klasifikasi menjadi Positif / Netral / Negatif
+3. **Identifikasi Topik**: Tentukan topik utama dari daftar yang sudah ditentukan
+4. **Ringkasan Otomatis**: Ringkas ulasan dalam 1-2 kalimat tanpa kehilangan detail penting
+5. **Visualisasi**: Grafik distribusi sentimen dan topik
+6. **Insight & Rekomendasi Bisnis**
+
+---
+
+## 📊 Insight & Findings
+
+### 📈 Sentimen
+- **78% ulasan** bersentimen **positif** → pelanggan puas
+- **18% negatif** → dominan membahas kualitas makanan
+- Sisanya netral atau tidak terklasifikasi
+
+### 💡 Temuan Menarik
+- **Topik "Food Quality"** muncul paling sering, baik dalam ulasan positif maupun negatif → indikator utama persepsi pelanggan
+- **Korelasi kuat** antara prediksi sentimen dengan rating bintang → validasi prediksi LLM IBM Granite
+
+---
+
+## 🤖 AI Support Explanation
+
+Model LLM digunakan untuk 3 tugas utama:
+
+| Tugas AI | Penjelasan | Prompt |
+|----------|------------|--------|
+| 🧭 Sentiment Classification | Mengidentifikasi emosi pelanggan dari teks ulasan | `"Klasifikasikan sentimen ulasan ini sebagai Positive, Neutral, atau Negative"` |
+| 🧩 Topic Extraction | Mengelompokkan ulasan ke dalam topik seperti Service, Food Quality, Price, dll. | `"Identifikasi 1-2 topik dari daftar berikut..."` |
+| 📝 Summarization | Merangkum ulasan panjang ke dalam kalimat ringkas yang tetap bermakna | `"Ringkas ulasan berikut dalam 1-2 kalimat..."` |
+
+> Semua tugas menggunakan teknik **prompt engineering** dengan pengaturan parameter seperti temperature = 0.3, max_tokens, dan top_k untuk menjaga konsistensi.
+
+---
+
+## ✅ Conclusion & Recommendations
+
+### 🎯 Kesimpulan:
+- IBM Granite terbukti efektif dalam membaca dan memahami konteks dari review pelanggan
+- Memberikan insight yang relevan, cepat, dan dapat diandalkan untuk strategi bisnis
+
+### 🚀 Rekomendasi:
+- Fokus pada **peningkatan kualitas makanan** sebagai area paling sering dikritik
+- Gunakan ulasan positif sebagai bahan promosi brand
+- Terapkan sistem **monitoring otomatis berbasis AI** untuk feedback berkelanjutan
+- Manfaatkan **ringkasan otomatis** untuk laporan manajerial yang lebih cepat dan tajam
+
+---
+
+## 📂 File dalam Repo Ini
+
+| Nama File | Fungsi |
+|-----------|--------|
+| `AnalisisUlasanProduk_IBM_Granite_Ketsar.ipynb` | Notebook utama berisi seluruh pipeline analisis |
+| `yelp.csv` | Dataset ulasan pelanggan dari Yelp |
+| `PPT_CP_HACKTIV8_IBM_SENTIMENT ANALYSIS_MUHAMMAD KETSAR ALI ABI WAHID.pptx` | Presentasi final proyek Capstone dalam format PowerPoint |
+
+---
+
+## 🙌 Profil
+
+**Muhammad Ketsar Ali Abi Wahid**  
+📫 Email: muhammadketsar2@gmail.com  
+🌐 Website: [k-folio-prod.vercel.app](https://k-folio-prod.vercel.app)  
+📷 Instagram: [@ketsar.aaw](https://www.instagram.com/ketsar.aaw/)  
+🔗 LinkedIn: [@ketsarali](https://www.linkedin.com/in/ketsarali/)  
+
+> Seorang problem solver di dunia Data Science yang fokus pada transformasi data menjadi insight yang berdampak nyata. Selalu siap menghadapi tantangan analitis berikutnya.
+
+---
+
+> Terima kasih telah mengunjungi repositori ini! Jangan lupa ⭐ jika kamu suka dengan project ini 😄
