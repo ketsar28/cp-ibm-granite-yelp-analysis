@@ -97,7 +97,7 @@ Model LLM digunakan untuk 3 tugas utama:
 
 | Nama File | Fungsi |
 |-----------|--------|
-| `AnalisisUlasanProduk_IBM_Granite_Ketsar.ipynb` | Notebook utama berisi seluruh pipeline analisis |
+| `ReviewsAnalysis_IBM_Granite_Ketsar.ipynb` | Notebook utama berisi seluruh pipeline analisis |
 | `yelp.csv` | Dataset ulasan pelanggan dari Yelp |
 | `PPT_CP_HACKTIV8_IBM_SENTIMENT ANALYSIS_MUHAMMAD KETSAR ALI ABI WAHID.pptx` | Presentasi final proyek Capstone dalam format PowerPoint |
 
